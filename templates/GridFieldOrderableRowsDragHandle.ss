@@ -1,2 +1,2 @@
-<span class="handle"><span class="icon"></span></span>
+<span class="handle $ExtraClass"><span class="icon"></span></span>
 $SortField

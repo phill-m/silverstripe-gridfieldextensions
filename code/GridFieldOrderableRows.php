@@ -209,8 +209,14 @@ class GridFieldOrderableRows extends RequestHandler implements
 		$sortField->addExtraClass('ss-orderable-hidden-sort');
 		$sortField->setForm($grid->getForm());
 
+		$extraClass = '';
+		if (method_exists($grid->getModelClass(), 'isSortable') && !$record->isSortable())
+			$extraClass = 'ui-state-nosort';
+		$sortField->setForm($grid->getForm());
+
 		return ViewableData::create()->customise(array(
-			'SortField' => $sortField
+			'SortField' => $sortField,
+			'ExtraClass' => $extraClass
 		))->renderWith('GridFieldOrderableRowsDragHandle');
 	}
 

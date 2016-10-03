@@ -338,7 +338,8 @@
 					handle: ".handle",
 					helper: helper,
 					opacity: .7,
-					update: update
+					update: update,
+					cancel: ".ui-state-nosort"
 				});
 			},
 			onremove: function() {
